@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>資料要先能用，才談得上會自己動</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E7E6E0;
+  --card:#F4F3EF;
+  --card2:#EBE9E2;
+  --ink:#171A18;
+  --ink-soft:#4E5551;
+  --tin:#7C8A8E;
+  --line:#CBC9C0;
+  --vein:#1E5A50;
+  --vein-tint:#E4EDE9;
+  --ore:#9C6B2F;
+  --ore-tint:#F1E8DA;
+  --s1:#2C3A36;
+  --s2:#3F5B54;
+  --s3:#5B7D71;
+  --s4:#8FA79A;
+  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+  line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+a{color:inherit}
+
+/* ── 導覽 ─────────────────────── */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(231,230,224,.94);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:26px;height:56px}
+.brand{font-family:var(--serif);font-weight:900;font-size:15px;letter-spacing:.01em;white-space:nowrap}
+.topnav{margin-left:auto;display:flex;gap:22px;font-size:13.5px}
+.topnav a{text-decoration:none;color:var(--ink-soft);transition:color .15s}
+.topnav a:hover{color:var(--vein)}
+.topnav a.cta{color:var(--vein);font-weight:700}
+@media(max-width:720px){.topnav{display:none}}
+
+/* ── 主視覺 ───────────────────── */
+.hero{padding:88px 0 64px;border-bottom:1px solid var(--line)}
+.hero h1{font-family:var(--serif);font-weight:900;
+  font-size:clamp(36px,6.2vw,64px);line-height:1.14;letter-spacing:-.02em;margin-bottom:26px}
+.hero h1 em{font-style:normal;color:var(--vein)}
+.hero p{font-size:clamp(16px,2vw,19px);color:var(--ink-soft);max-width:54ch;font-weight:300}
+.hero-actions{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-block;text-decoration:none;font-size:15px;font-weight:700;
+  padding:13px 26px;border:1.5px solid var(--vein);transition:all .16s}
+.btn-solid{background:var(--vein);color:var(--card)}
+.btn-solid:hover{background:#174a42}
+.btn-ghost{color:var(--vein)}
+.btn-ghost:hover{background:var(--vein-tint)}
+.hero-note{font-size:13px;color:var(--tin)}
+
+/* ── 區塊 ─────────────────────── */
+.sec{padding:74px 0 0}
+.sec-head{margin-bottom:34px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--tin);margin-bottom:12px}
+.sec-head h2{font-family:var(--serif);font-weight:700;
+  font-size:clamp(24px,3.4vw,34px);letter-spacing:-.01em;line-height:1.3}
+.sec-head p{margin-top:12px;color:var(--ink-soft);max-width:60ch;font-size:15.5px}
+
+/* ── 症狀牆 ───────────────────── */
+.symptoms{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.sym{background:var(--card);border:1px solid var(--line);padding:20px 22px;font-size:15px;line-height:1.65}
+.sym span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  color:var(--tin);margin-bottom:9px}
+.sym-close{margin-top:26px;font-family:var(--serif);font-weight:700;
+  font-size:clamp(19px,2.6vw,25px);line-height:1.55;border-left:3px solid var(--vein);padding-left:24px;max-width:42ch}
+
+/* ── 地層 ─────────────────────── */
+.strata{display:flex}
+.bands{flex:1;display:flex;flex-direction:column-reverse}
+.band{color:#F4F3EF;padding:20px 24px;display:flex;align-items:center;gap:20px;
+  flex-wrap:wrap;border-bottom:1px solid rgba(244,243,239,.16);text-decoration:none}
+.bands .band:first-child{border-bottom:none}
+.band-n{font-family:var(--mono);font-size:11px;opacity:.6;letter-spacing:.14em;min-width:26px}
+.band-t{font-family:var(--serif);font-weight:700;font-size:19px;min-width:150px}
+.band-d{font-size:14px;opacity:.84;font-weight:300}
+.band-r{margin-left:auto;font-family:var(--mono);font-size:11px;opacity:.55;letter-spacing:.1em}
+.b1{background:var(--s1)}.b2{background:var(--s2)}.b3{background:var(--s3)}.b4{background:var(--s4)}
+.vein{width:64px;background:var(--ore);color:#F4F3EF;display:flex;align-items:center;justify-content:center}
+.vein span{writing-mode:vertical-rl;font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:.4em}
+.strata-cap{margin-top:14px;font-size:13px;color:var(--tin);font-family:var(--mono)}
+
+/* ── 自我檢核 ─────────────────── */
+.checker{background:var(--card);border:1px solid var(--line);padding:30px 30px 26px}
+.checker h3{font-family:var(--serif);font-weight:700;font-size:21px;margin-bottom:6px}
+.checker .hint{font-size:14px;color:var(--ink-soft);margin-bottom:22px}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){.qgrid{grid-template-columns:1fr}}
+.q{display:flex;gap:12px;align-items:flex-start;background:var(--paper);
+  border:1px solid var(--line);padding:13px 16px;cursor:pointer;font-size:14.5px;line-height:1.6;
+  transition:border-color .15s,background .15s}
+.q:hover{border-color:var(--tin)}
+.q input{appearance:none;width:15px;height:15px;border:1.5px solid var(--tin);
+  margin-top:5px;flex-shrink:0;cursor:pointer;background:#fff}
+.q input:checked{background:var(--vein);border-color:var(--vein)}
+.q:has(input:checked){background:var(--vein-tint);border-color:var(--vein)}
+.result{margin-top:22px;border-top:1px solid var(--line);padding-top:20px;font-size:15px}
+.result strong{color:var(--vein)}
+.result .rlayer{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--vein);display:block;margin:6px 0 8px}
+
+/* ── 服務線 ───────────────────── */
+.line{background:var(--card);border:1px solid var(--line);margin-bottom:22px;scroll-margin-top:74px}
+.line-top{display:flex;align-items:flex-start;gap:18px;padding:26px 28px 22px;border-bottom:1px solid var(--line)}
+.chip{font-family:var(--mono);font-size:11px;color:#F4F3EF;padding:5px 11px;
+  letter-spacing:.1em;flex-shrink:0;margin-top:5px}
+.c1{background:var(--s1)}.c2{background:var(--s2)}.c3{background:var(--s3)}.c4{background:var(--s4)}
+.line-top h3{font-family:var(--serif);font-weight:700;font-size:23px}
+.line-top .role{font-size:13.5px;color:var(--ink-soft);margin-top:4px}
+
+.pair-head{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.pair-head span{padding:13px 28px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--tin)}
+.pair-head span:last-child{border-left:1px solid var(--line);color:var(--vein)}
+.pair{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.pairs .pair:last-child{border-bottom:none}
+.p-q,.p-a{padding:18px 28px;font-size:14.5px;line-height:1.68}
+.p-q{background:var(--card2);color:var(--ink-soft)}
+.p-a{border-left:1px solid var(--line)}
+.p-a b{font-weight:700;color:var(--vein)}
+
+.facts{display:flex;flex-wrap:wrap;border-top:1px solid var(--line)}
+.fact{flex:1;min-width:160px;padding:16px 28px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:none}
+.lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--tin);margin-bottom:8px}
+.fact .lbl{margin-bottom:5px}
+.fact .val{font-family:var(--mono);font-size:14px;font-weight:700}
+.fact .val.plain{font-family:var(--sans);font-weight:400;font-size:14px}
+.fact .val.up{color:var(--ore)}
+
+/* ── 表格 ─────────────────────── */
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:14.5px}
+th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--tin);font-weight:400;padding:14px 18px;
+  border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:15px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.num{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+.rec{background:var(--vein-tint)}
+
+/* ── 卡片列 ───────────────────── */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.cols,.cols3{grid-template-columns:1fr}}
+.box{background:var(--card);border:1px solid var(--line);padding:26px 28px}
+.box.tint{background:var(--vein-tint)}
+.box.ore{background:var(--ore-tint)}
+.box h4{font-family:var(--serif);font-weight:700;font-size:19px;margin-bottom:14px}
+.box ul{list-style:none}
+.box li{padding-left:16px;position:relative;margin-bottom:9px;font-size:14.5px;line-height:1.62}
+.box li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:1px;background:var(--tin)}
+.box.ore li::before{background:var(--ore)}
+
+/* ── 合作方式 ─────────────────── */
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:var(--card)}
+@media(max-width:820px){.ways{grid-template-columns:1fr}}
+.way{padding:28px 30px;border-right:1px solid var(--line)}
+.way:last-child{border-right:none}
+@media(max-width:820px){.way{border-right:none;border-bottom:1px solid var(--line)}
+  .way:last-child{border-bottom:none}}
+.way .n{font-family:var(--mono);font-size:11px;color:var(--tin);letter-spacing:.16em;margin-bottom:13px}
+.way h4{font-family:var(--serif);font-weight:700;font-size:20px;margin-bottom:10px}
+.way p{font-size:14.5px;color:var(--ink-soft);line-height:1.68}
+
+/* ── 流程 ─────────────────────── */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);background:var(--card)}
+@media(max-width:820px){.flow{grid-template-columns:1fr}}
+.step{padding:24px 24px 26px;border-right:1px solid var(--line)}
+.step:last-child{border-right:none}
+@media(max-width:820px){.step{border-right:none;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:none}}
+.step .n{font-family:var(--mono);font-size:11px;color:var(--tin);letter-spacing:.16em;margin-bottom:12px}
+.step h5{font-family:var(--serif);font-weight:700;font-size:17px;margin-bottom:8px}
+.step p{font-size:14px;color:var(--ink-soft);line-height:1.62}
+.step .t{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--vein)}
+
+/* ── 案例 ─────────────────────── */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.cases{grid-template-columns:1fr}}
+.case{background:var(--card);border:1px solid var(--line);padding:26px 26px 24px}
+.case .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--tin);margin-bottom:14px}
+.case .big{font-family:var(--serif);font-weight:900;font-size:38px;color:var(--vein);line-height:1.1}
+.case .big small{font-size:16px;font-weight:700}
+.case h5{font-size:15px;font-weight:700;margin:12px 0 6px}
+.case p{font-size:14px;color:var(--ink-soft);line-height:1.62}
+
+/* ── CTA ──────────────────────── */
+.cta-block{margin-top:78px;background:var(--s1);color:#F4F3EF;padding:56px 44px}
+.cta-block .kicker{color:var(--s4)}
+.cta-block h2{font-family:var(--serif);font-weight:900;
+  font-size:clamp(26px,4.2vw,42px);line-height:1.25;margin-bottom:18px}
+.cta-block p{color:#C6D2CC;max-width:52ch;font-size:16px;font-weight:300}
+.cta-facts{margin-top:30px;display:flex;flex-wrap:wrap;gap:34px}
+.cta-facts div{min-width:150px}
+.cta-facts .lbl{color:#8FA79A}
+.cta-facts .v{font-family:var(--mono);font-size:17px;font-weight:700}
+.cta-actions{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px}
+.cta-block .btn{border-color:var(--s4)}
+.cta-block .btn-solid{background:var(--s4);color:var(--s1);border-color:var(--s4)}
+.cta-block .btn-solid:hover{background:#A2B8AC}
+.cta-block .btn-ghost{color:#F4F3EF}
+.cta-block .btn-ghost:hover{background:rgba(244,243,239,.1)}
+
+footer{padding:30px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--tin);
+  letter-spacing:.05em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media(max-width:760px){
+  .wrap{padding:0 20px}
+  .strata{flex-direction:column-reverse}
+  .vein{width:100%;height:44px}
+  .vein span{writing-mode:horizontal-tb;letter-spacing:.3em;font-size:14px}
+  .band{padding:16px 18px}.band-r{display:none}
+  .pair-head{display:none}
+  .pair{grid-template-columns:1fr}
+  .p-q,.p-a{padding:16px 20px}
+  .p-a{border-left:none;border-top:1px solid var(--line)}
+  .p-q::before{content:"您的難題";display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--tin);margin-bottom:6px}
+  .p-a::before{content:"我們的做法";display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--vein);margin-bottom:6px}
+  .fact{border-right:none;border-bottom:1px solid var(--line);min-width:100%}
+  .cta-block{padding:40px 24px}
+  table{font-size:13px}th,td{padding:12px}
+}
+@media print{body{background:#fff}.topbar{position:static}.sec,.line{page-break-inside:avoid}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">Uranisys Digital Solution Sdn. Bhd.</div>
+    <nav class="topnav">
+      <a href="#check">自我檢核</a>
+      <a href="#services">服務內容</a>
+      <a href="#engage">合作方式</a>
+      <a href="#contact" class="cta">預約診斷</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- 主視覺 -->
+<header class="hero">
+  <h1>資料要先能用，<br>才談得上<em>會自己動</em>。</h1>
+  <p>
+    您不是缺系統。您缺的是一層把資料整乾淨、把系統串起來、使例行作業得以自動完成的人。
+    我們處理的就是這一層。
+  </p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn btn-solid">預約一次診斷</a>
+    <a href="#check" class="btn btn-ghost">先了解貴公司目前所處的層次</a>
+  </div>
+  <p class="hero-note" style="margin-top:20px">第一步是了解現況。診斷完成後，您會拿到一份問題清單與優先順序建議。</p>
+</header>
+
+<!-- 症狀 -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="kicker">您可能正在經歷</div>
+    <h2>這些狀況，是否似曾相識？</h2>
+  </div>
+  <div class="symptoms">
+    <div class="sym"><span>每個月</span>月底那幾天，全公司都在加班整理 Excel、對帳、湊報表。</div>
+    <div class="sym"><span>系統之間</span>買了三套系統，彼此不說話，中間須以人工複製貼上。</div>
+    <div class="sym"><span>紙本流程</span>簽核、請購、請假仍以紙本處理，單據停留於何人手上無從掌握。</div>
+    <div class="sym"><span>資料品質</span>同一個客戶在不同表裡有好幾種寫法，數字永遠無法勾稽一致。</div>
+    <div class="sym"><span>決策速度</span>要等會計月結完，才知道上個月賺不賺錢。</div>
+    <div class="sym"><span>人的風險</span>關鍵作業綁在某個資深員工身上，該同仁請假即告停擺。</div>
+  </div>
+  <div class="sym-close">
+    這些狀況通常並非源自員工的投入不足。<br>而是資料缺乏共同基準，以致各項作業皆需仰賴人力承擔。
+  </div>
+</section>
+
+<!-- 四層 -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="kicker">我們怎麼看您的問題</div>
+    <h2>四層結構：由下往上，不可跳層</h2>
+    <p>多數導入案失敗，是因為跳過下層逕行處理上層。建立在未經整理資料上的儀表板，較之全無儀表板更具風險——因為您將依據錯誤的數字進行決策。</p>
+  </div>
+
+  <div class="strata">
+    <div class="bands">
+      <a class="band b1" href="#L1"><span class="band-n">L1</span><span class="band-t">資料清整</span><span class="band-d">資料是乾淨的</span><span class="band-r">地基</span></a>
+      <a class="band b2" href="#L2"><span class="band-n">L2</span><span class="band-t">API 串接</span><span class="band-d">資料是流通的</span><span class="band-r">管線</span></a>
+      <a class="band b3" href="#L3"><span class="band-n">L3</span><span class="band-t">流程數位化</span><span class="band-d">作業是自動的</span><span class="band-r">引擎</span></a>
+      <a class="band b4" href="#L4"><span class="band-n">L4</span><span class="band-t">儀表板洞察</span><span class="band-d">決策是有據的</span><span class="band-r">儀表</span></a>
+    </div>
+  </div>
+  <p class="strata-cap">任一層皆可單獨切入，依您的實際狀況決定從哪裡開始</p>
+</section>
+
+<!-- 自我檢核 -->
+<section class="sec" id="check">
+  <div class="sec-head">
+    <div class="kicker">30 秒自我檢核</div>
+    <h2>貴公司目前處於哪一層？</h2>
+    <p>勾選所有符合您公司現況的敘述，下方將提供建議的起始層次。</p>
+  </div>
+
+  <div class="checker">
+    <h3>公司現況檢核表</h3>
+    <p class="hint">沒有標準答案，勾越多不代表越糟——只代表可以省下的時間越多。</p>
+    <div class="qgrid" id="qgrid">
+      <label class="q"><input type="checkbox" data-layer="1">同一個客戶或料號，在不同檔案裡有不只一種寫法</label>
+      <label class="q"><input type="checkbox" data-layer="1">各部門各自維護一份 Excel，彼此數字無法勾稽一致</label>
+      <label class="q"><input type="checkbox" data-layer="1">要做分析時，光整理資料就佔掉大部分時間</label>
+      <label class="q"><input type="checkbox" data-layer="2">同一筆資料要在兩套以上系統重複輸入</label>
+      <label class="q"><input type="checkbox" data-layer="2">電商或通路訂單要人工下載再匯入內部系統</label>
+      <label class="q"><input type="checkbox" data-layer="2">想導入新工具，但不確定能不能接現有系統</label>
+      <label class="q"><input type="checkbox" data-layer="3">簽核、請購、請假仍以紙本或通訊軟體處理</label>
+      <label class="q"><input type="checkbox" data-layer="3">每月有固定幾天，多人都在做重複的對帳與整理</label>
+      <label class="q"><input type="checkbox" data-layer="3">某些關鍵作業只有一個人會做</label>
+      <label class="q"><input type="checkbox" data-layer="4">要等月結完才知道上個月的經營狀況</label>
+      <label class="q"><input type="checkbox" data-layer="4">說不清楚哪個客戶、產品或專案真正賺錢</label>
+      <label class="q"><input type="checkbox" data-layer="4">報表做了很多，但主管實際查閱率偏低</label>
+    </div>
+    <div class="result" id="result">
+      勾選後這裡會顯示建議的起點。
+    </div>
+  </div>
+</section>
+
+<!-- 服務內容 -->
+<section class="sec" id="services">
+  <div class="sec-head">
+    <div class="kicker">服務內容</div>
+    <h2>每一個難題，都有對應的做法</h2>
+    <p>以下是各層最常見的狀況，以及我們實際會做的事。範圍與做法會依您的實際情形調整。</p>
+  </div>
+
+  <!-- L1 -->
+  <article class="line" id="L1">
+    <div class="line-top">
+      <span class="chip c1">L1</span>
+      <div><h3>資料清整</h3><div class="role">打地基——所有後續工作的前提</div></div>
+    </div>
+    <div class="pairs">
+      <div class="pair-head"><span>您的難題</span><span>我們的做法</span></div>
+      <div class="pair"><div class="p-q">同一個客戶、同一個料號，不同表裡有好幾種寫法</div><div class="p-a"><b>主檔標準化。</b>客戶、供應商、產品、料號全面去重與統一命名，建立唯一識別碼，讓每一筆資料只對應一個對象。</div></div>
+      <div class="pair"><div class="p-q">部門各自維護一份 Excel，數字永遠無法勾稽一致</div><div class="p-a"><b>盤點＋指定單一真實來源。</b>釐清資料存在哪、誰維護、多久更新，指定唯一權威來源並訂出維護權責。</div></div>
+      <div class="pair"><div class="p-q">想做分析，光整理資料就花掉八成時間</div><div class="p-a"><b>建立品質規則與自動清洗。</b>定義什麼叫有效資料、缺漏怎麼補，把重複的整理動作寫成可重跑的流程。</div></div>
+      <div class="pair"><div class="p-q">系統要換要升級，舊資料無法順利移轉</div><div class="p-a"><b>歷史資料轉換與遷移。</b>欄位對應、格式轉換、轉換前後對帳驗證，確認搬過去的數字跟原本一致。</div></div>
+      <div class="pair"><div class="p-q">上次整理完，三個月後又再度失序</div><div class="p-a"><b>主檔維護 SOP。</b>訂出新增與異動規則、誰有權限改、多久檢查一次，讓乾淨的狀態維持得住。</div></div>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="lbl">交付物</div><div class="val plain">盤點清冊、標準檔、缺漏清單、維護規範</div></div>
+      <div class="fact"><div class="lbl">工期</div><div class="val">1–4 週</div></div>
+    </div>
+  </article>
+
+  <!-- L2 -->
+  <article class="line" id="L2">
+    <div class="line-top">
+      <span class="chip c2">L2</span>
+      <div><h3>API 串接</h3><div class="role">接管線——不必換掉現有系統，只要讓它們開始對話</div></div>
+    </div>
+    <div class="pairs">
+      <div class="pair-head"><span>您的難題</span><span>我們的做法</span></div>
+      <div class="pair"><div class="p-q">買了三套系統，彼此不說話，中間須以人工複製貼上</div><div class="p-a"><b>系統間串接。</b>先做盤點與整合可行性評估，再建立 ERP、POS、電商平台、會計軟體、CRM 之間的資料通道。</div></div>
+      <div class="pair"><div class="p-q">電商平台訂單要人工下載再匯入 ERP</div><div class="p-a"><b>自動取單與格式轉換。</b>排程自動抓取訂單，做欄位對應與格式轉換後直接寫入 ERP，人不必再經手。</div></div>
+      <div class="pair"><div class="p-q">想用某個雲端服務，不知道能不能接現有系統</div><div class="p-a"><b>介接可行性評估。</b>確認對方有無 API、資料出不出得來，在導入前先評估風險與工期。</div></div>
+      <div class="pair"><div class="p-q">對方系統老舊，根本沒有 API</div><div class="p-a"><b>替代通道。</b>改用檔案自動交換、資料庫直讀或網頁自動化，不必為了串接就換掉整套系統。</div></div>
+      <div class="pair"><div class="p-q">客戶或供應商要求資料交換，不知從何做起</div><div class="p-a"><b>定義規格並建置管道。</b>談定格式、頻率與傳輸方式，加上錯誤處理、自動重試與異常通知。</div></div>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="lbl">交付物</div><div class="val plain">整合架構圖、串接管道、異常處理機制、技術文件</div></div>
+      <div class="fact"><div class="lbl">工期</div><div class="val">2–5 週</div></div>
+    </div>
+  </article>
+
+  <!-- L3 -->
+  <article class="line" id="L3">
+    <div class="line-top">
+      <span class="chip c3">L3</span>
+      <div><h3>流程數位化與自動化</h3><div class="role">裝引擎——先優化，再自動化。不把爛流程原封不動搬上系統</div></div>
+    </div>
+    <div class="pairs">
+      <div class="pair-head"><span>您的難題</span><span>我們的做法</span></div>
+      <div class="pair"><div class="p-q">簽核、請購、請假仍以紙本處理，單據停留於何人手上無從掌握</div><div class="p-a"><b>紙本流程數位化。</b>表單改成線上、簽核改成系統流程，每一關卡由何人於何時處理均留有紀錄，逾時系統自動提醒。</div></div>
+      <div class="pair"><div class="p-q">同一份資料要重複抄進不同表單和系統，轉抄錯誤往往事後才被發現</div><div class="p-a"><b>填一次，全程通用。</b>表單本身就是資料來源，填完直接進系統；必填與格式檢核在填的當下就擋下錯誤。</div></div>
+      <div class="pair"><div class="p-q">單子要跨部門跑，光是等人簽就耗掉好幾天</div><div class="p-a"><b>縮短流程路徑。</b>重新設計簽核層級與條件式分流，小額或例行案件自動放行，只有例外才需要人介入。</div></div>
+      <div class="pair"><div class="p-q">要查半年前某張單子的來龍去脈，得調閱紙本檔案</div><div class="p-a"><b>流程紀錄可查可稽核。</b>所有單據與簽核歷程集中留存、可搜尋，查帳、稽核、客訴追溯都能立刻調出來。</div></div>
+      <div class="pair"><div class="p-q">每月固定幾天，全公司都在做重複的整理和對帳</div><div class="p-a"><b>鎖定高頻作業先自動化。</b>月結對帳、報表產出、資料匯整、批次上傳，用排程與腳本讓它自己跑完。</div></div>
+      <div class="pair"><div class="p-q">一個流程經過五個人、七個表單，已無人能說明其原由</div><div class="p-a"><b>流程盤點與重新設計。</b>畫出實際流程，找出重工、等待與無效步驟，先移除不必要的環節，再決定哪一段值得自動化。</div></div>
+      <div class="pair"><div class="p-q">加班加在整理資料，而不是做生意</div><div class="p-a"><b>把整理工作交給機器。</b>用 RPA、腳本與雲端流程工具接手例行處理，人只負責例外判斷與最終確認。</div></div>
+      <div class="pair"><div class="p-q">關鍵作業綁在某個資深員工身上，該同仁請假即告停擺</div><div class="p-a"><b>把個人經驗轉成明文流程。</b>作業規則寫成文件與自動化腳本，附操作手冊與教育訓練，使任何人員皆能接手。</div></div>
+      <div class="pair"><div class="p-q">之前導入過自動化，系統一改就失效無人能夠修復</div><div class="p-a"><b>可維護的建置＋維運支援。</b>流程設計時就預留調整空間，並提供改版後的調整與遠端技術支援。</div></div>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="lbl">交付物</div><div class="val plain">流程現況圖與優化建議、線上表單與簽核流程、自動化流程、操作手冊、教育訓練</div></div>
+      <div class="fact"><div class="lbl">工期</div><div class="val">2–8 週</div></div>
+    </div>
+  </article>
+
+  <!-- L4 -->
+  <article class="line" id="L4">
+    <div class="line-top">
+      <span class="chip c4">L4</span>
+      <div><h3>儀表板設計與商業洞察</h3><div class="role">上儀表——先問對問題，再做圖</div></div>
+    </div>
+    <div class="pairs">
+      <div class="pair-head"><span>您的難題</span><span>我們的做法</span></div>
+      <div class="pair"><div class="p-q">報表數量眾多，但您所需的答案仍須臨時查找</div><div class="p-a"><b>決策訪談先行。</b>先確認您每天、每月真正需要回答哪三個問題，僅建置能夠回答這些問題的畫面。</div></div>
+      <div class="pair"><div class="p-q">等會計月結完才知道上個月狀況，來不及反應</div><div class="p-a"><b>建立自動更新機制。</b>資料每日同步，關鍵指標隨時可看，不必等結帳才知道發生什麼事。</div></div>
+      <div class="pair"><div class="p-q">不知道哪個客戶、產品、業務真的賺錢</div><div class="p-a"><b>指標從商業邏輯反推。</b>建立客戶集中度、產品毛利、應收帳齡、庫存周轉、產能交期等主題分析。</div></div>
+      <div class="pair"><div class="p-q">已導入 BI 工具，但成果實際查閱率偏低</div><div class="p-a"><b>指標定義文件＋定期解讀。</b>不僅提供圖表，並說明「發生什麼、可能原因、以及後續建議採取的行動」。</div></div>
+      <div class="pair"><div class="p-q">每個人算出來的數字都不一樣，會議中往往須先釐清定義</div><div class="p-a"><b>統一指標口徑。</b>計算方式、資料來源與期間定義寫成文件，全公司用同一套算法。</div></div>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="lbl">交付物</div><div class="val plain">指標定義文件、儀表板、自動更新機制、定期解讀會議</div></div>
+      <div class="fact"><div class="lbl">工期</div><div class="val">3–6 週</div></div>
+    </div>
+  </article>
+</section>
+
+<!-- 成果 -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="kicker">實際成果</div>
+    <h2>做完之後，差別長這樣</h2>
+    <p>以下為過往專案的代表性成果，客戶名稱依保密約定不揭露。</p>
+  </div>
+  <div class="cases">
+    <div class="case">
+      <div class="tag">L1 ／ 資料清整</div>
+      <div class="big">-72<small>%</small></div>
+      <h5>某考試中心</h5>
+      <p>資料整理作業所需時間縮短七成以上，原本大量的人工核對與彙整改由標準化流程處理。</p>
+    </div>
+    <div class="case">
+      <div class="tag">L3 ／ 流程數位化</div>
+      <div class="big">-70<small>%</small></div>
+      <h5>某汽車展銷中心</h5>
+      <p>原本仰賴紙本與人工傳遞的作業流程改為線上處理，整體作業時間縮短七成。</p>
+    </div>
+    <div class="case">
+      <div class="tag">L4 ／ 儀表板</div>
+      <div class="big">半天<small> → 30 分鐘內</small></div>
+      <h5>某考試中心・某汽車展銷中心</h5>
+      <p>原本需耗費半天彙整的營運報表，改為自動更新，三十分鐘內即可取得所需數據。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 合作方式 -->
+<section class="sec" id="engage">
+  <div class="sec-head">
+    <div class="kicker">合作方式</div>
+    <h2>兩種合作模式，依需求選擇</h2>
+    <p>費用依實際範圍另行報價。以下先說明與本公司合作可採行的方式。</p>
+  </div>
+  <div class="ways">
+    <div class="way">
+      <div class="n">模式 A</div>
+      <h4>專案制</h4>
+      <p>適合目標與交付內容明確的需求。先確認範圍、時程與驗收標準，依專案計費，交付完成即結案。範圍清楚的情況下，這個方式對雙方的預算與責任都最好掌握。</p>
+    </div>
+    <div class="way">
+      <div class="n">模式 B</div>
+      <h4>點數制</h4>
+      <p>預先儲值時數，依實際投入扣點。適合需求還在變動、或需要長期支援與持續調整的情況——無須為每一件小事重新進行立案與報價流程，需要人力時即可直接動用。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 合作流程 -->
+<section class="sec">
+  <div class="sec-head">
+    <div class="kicker">合作流程</div>
+    <h2>從第一次見面到上線</h2>
+  </div>
+  <div class="flow">
+    <div class="step">
+      <div class="n">01</div>
+      <h5>初談</h5>
+      <p>了解您的現況與最想解決的問題，確認我們適不適合。</p>
+      <div class="t">60 分鐘・免費</div>
+    </div>
+    <div class="step">
+      <div class="n">02</div>
+      <h5>診斷</h5>
+      <p>實際看資料與流程，產出問題清單、優先順序與可行做法。</p>
+      <div class="t">1–2 週</div>
+    </div>
+    <div class="step">
+      <div class="n">03</div>
+      <h5>導入</h5>
+      <p>依議定範圍執行，過程中定期回報進度，交付含文件與教育訓練。</p>
+      <div class="t">依專案而定</div>
+    </div>
+    <div class="step">
+      <div class="n">04</div>
+      <h5>維運</h5>
+      <p>月度健檢、異常處理、系統改版後的調整與遠端支援。</p>
+      <div class="t">可隨時終止</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block" id="contact">
+  <div class="kicker">下一步</div>
+  <h2>先做一次診斷，<br>再決定要從哪一層開始。</h2>
+  <p>
+    我們不會在第一次見面就叫您買東西。先看清楚問題在哪、值不值得處理，您再決定要不要往下走。
+  </p>
+  <div class="cta-facts">
+    <div><div class="lbl">初次會談</div><div class="v">免費・60 分鐘</div></div>
+    <div><div class="lbl">診斷</div><div class="v">1–2 週</div></div>
+    <div><div class="lbl">進行方式</div><div class="v">分階段・隨時可停</div></div>
+  </div>
+</section>
+
+<footer>
+  <span>Uranisys Digital Solution Sdn. Bhd.</span>
+  <span>本文件內容依實際需求調整</span>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  const names={1:"L1　資料清整",2:"L2　API 串接",3:"L3　流程數位化與自動化",4:"L4　儀表板設計與商業洞察"};
+  const advice={
+    1:"您的資料還沒有共同的基準，這是所有後續工作的前提。建議先把主檔整理乾淨，再談串接與自動化。",
+    2:"您的系統各自為政，資料靠人搬運。建議先把管線接起來，讓資料自己流動。",
+    3:"您的作業還大量依賴人工與紙本。建議先做流程盤點與數位化，這一層通常最快看得到時間上的回收。",
+    4:"您的資料多半已經在系統裡，但沒有轉成可用的決策依據。建議從指標設計與儀表板著手。"
+  };
+  const grid=document.getElementById("qgrid");
+  const out=document.getElementById("result");
+  grid.addEventListener("change",function(){
+    const boxes=[...grid.querySelectorAll("input:checked")];
+    if(!boxes.length){out.textContent="勾選後這裡會顯示建議的起點。";return;}
+    const tally={1:0,2:0,3:0,4:0};
+    boxes.forEach(b=>tally[b.dataset.layer]++);
+    const max=Math.max(...Object.values(tally));
+    const top=Object.keys(tally).filter(k=>tally[k]===max).map(Number).sort()[0];
+    out.innerHTML=
+      '<div>您勾選了 <strong>'+boxes.length+'</strong> 項。依照分布，建議的起點是：</div>'+
+      '<span class="rlayer">'+names[top]+'</span>'+
+      '<div>'+advice[top]+'</div>'+
+      '<div style="margin-top:14px"><a href="#L'+top+'" style="color:var(--vein);font-weight:700">看這一層的做法 →</a>'+
+      '　<a href="#contact" style="color:var(--vein);font-weight:700">預約診斷 →</a></div>';
+  });
+})();
+</script>
+</body>
+</html>
