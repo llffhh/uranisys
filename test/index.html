@@ -245,16 +245,16 @@ footer{padding:30px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--
 .langsw a.on{background:var(--vein);color:#fff}
 .langsw a.on:hover{background:var(--vein);color:#fff}
 
-/* mobile: keep the booking CTA on screen, drop only the section links */
+/* mobile: all four nav items as a 2x2 grid, booking button filled */
 @media(max-width:720px){
-  .topbar .wrap{flex-wrap:wrap;height:auto;padding-top:9px;padding-bottom:9px;gap:9px}
+  .topbar .wrap{flex-wrap:wrap;height:auto;padding-top:9px;padding-bottom:9px;gap:8px}
   .brand{font-size:12.5px}
   .langsw{margin-left:auto}
   .langsw a{padding:4px 6px;font-size:10px;letter-spacing:.03em}
-  .topnav{display:flex;order:3;width:100%;margin-left:0;gap:0}
-  .topnav a:not(.cta){display:none}
-  .topnav a.cta{display:block;width:100%;text-align:center;background:var(--vein);color:#fff;
-    padding:9px 12px;border-radius:3px;font-size:13px;font-weight:700;letter-spacing:.01em}
+  .topnav{display:grid;grid-template-columns:1fr 1fr;gap:6px;order:3;width:100%;margin-left:0}
+  .topnav a{display:block;text-align:center;padding:7px 6px;border:1px solid var(--line);border-radius:3px;
+    background:var(--card);color:var(--ink);font-size:12.5px;line-height:1.3}
+  .topnav a.cta{background:var(--vein);border-color:var(--vein);color:#fff;font-weight:700}
   .topnav a.cta:hover{color:#fff}
 }
 @media(max-width:380px){.brand{font-size:11px}.langsw a{padding:4px 5px}}
