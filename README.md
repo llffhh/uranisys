@@ -22,10 +22,15 @@
 ## 網址結構（重要）
 
 - `/bd/`　　正式頁面（BM），`/bd/en/` 英文，`/bd/zh/` 簡體中文
+- `/bd/tw/`　繁體中文版，只在頁尾放連結，不進語言切換列
 - `/`　　　首頁，內容與 `/bd/` 相同（canonical 指向 `/bd/`）
-- `/BD_page/`　已移除
 
 名片上的 QR code 指向 `https://www.uranisys.com/bd`。
 
 日後若改用 WordPress 或其他平台重做官網，**必須在新平台重建 `/bd`**
 （建立一個網址為 bd 的頁面，或設一個轉址），否則已印出的名片會失效。
+
+### 重建方式
+
+改 `bd-onepager-lite.html` 之後，跑 `build_i18n.py`（OUT_DIR 設成 `bd`），
+四個語言版本會一起重建。
