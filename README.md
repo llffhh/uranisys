@@ -18,3 +18,10 @@
 2. DNS 加 CNAME 記錄指向 `llffhh.github.io`
 3. 推上去後到 repo Settings → Pages 勾選 Enforce HTTPS
 4. 舊網址會自動轉址到新網域，WhatsApp 上的連結不會斷
+
+## 名片 QR 網址（重要）
+
+名片上的 QR code 指向 `/bd`，它會自動轉到 `/BD_page/`。
+
+日後若改用 WordPress 或其他平台重做官網，**必須在新平台上重建 `/bd`**
+（建立一個網址為 `bd` 的頁面，或設一個轉址），否則已印出的名片會失效。
