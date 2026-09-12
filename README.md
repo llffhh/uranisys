@@ -19,11 +19,13 @@
 3. 推上去後到 repo Settings → Pages 勾選 Enforce HTTPS
 4. 舊網址會自動轉址到新網域，WhatsApp 上的連結不會斷
 
-## 名片 QR 網址（重要）
+## 網址結構（重要）
 
-名片上的 QR code 指向 `/bd`，會自動轉到 `/BD_page/`。
+- `/bd/`　　正式頁面（BM），`/bd/en/` 英文，`/bd/zh/` 簡體中文
+- `/BD_page/`　舊網址，自動轉到 `/bd/`（WhatsApp 舊連結用，別刪）
+- `/`　　　轉到 `/bd/`，等正式官網做好後再取代
+
+名片上的 QR code 指向 `https://www.uranisys.com/bd`。
 
 日後若改用 WordPress 或其他平台重做官網，**必須在新平台重建 `/bd`**
 （建立一個網址為 bd 的頁面，或設一個轉址），否則已印出的名片會失效。
-
-首頁 `/` 目前也是轉址到 `/BD_page/`，等正式官網做好後再取代。
