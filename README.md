@@ -22,8 +22,8 @@
 ## 網址結構（重要）
 
 - `/bd/`　　正式頁面（BM），`/bd/en/` 英文，`/bd/zh/` 簡體中文
-- `/BD_page/`　舊網址，自動轉到 `/bd/`（WhatsApp 舊連結用，別刪）
-- `/`　　　轉到 `/bd/`，等正式官網做好後再取代
+- `/`　　　首頁，內容與 `/bd/` 相同（canonical 指向 `/bd/`）
+- `/BD_page/`　已移除
 
 名片上的 QR code 指向 `https://www.uranisys.com/bd`。
 
