@@ -21,9 +21,10 @@
 
 ## 網址結構（重要）
 
-- `/bd/`　　正式頁面（BM），`/bd/en/` 英文，`/bd/zh/` 簡體中文
+- `/bd/`　　正式頁面（英文，預設語言），`/bd/bm/` BM，`/bd/zh/` 簡體中文
+- `/bd/en/`　舊英文網址，自動轉址到 `/bd/`
 - `/bd/tw/`　繁體中文版，只在頁尾放連結，不進語言切換列
-- `/`　　　首頁，內容與 `/bd/` 相同（canonical 指向 `/bd/`）
+- `/`　　　首頁，內容與 `/bd/` 相同（英文，canonical 指向 `/bd/`）
 
 名片上的 QR code 指向 `https://www.uranisys.com/bd`。
 
@@ -34,3 +35,5 @@
 
 改 `bd-onepager-lite.html` 之後，跑 `build_i18n.py`（OUT_DIR 設成 `bd`），
 四個語言版本會一起重建。
+注意：預設語言已改為英文，英文版輸出到 `bd/`、BM 版輸出到 `bd/bm/`，
+`bd/en/` 只保留轉址頁，腳本需照此調整。

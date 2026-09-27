@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data perlu boleh digunakan dahulu, barulah ia boleh berjalan sendiri</title>
+<title>Data has to be usable first, before it can run itself</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@ a{color:inherit}
   font-size:clamp(24px,3.4vw,34px);letter-spacing:-.01em;line-height:1.3}
 .sec-head p{margin-top:12px;color:var(--ink-soft);max-width:60ch;font-size:15.5px}
 
-/* ── gejala牆 ───────────────────── */
+/* ── symptoms牆 ───────────────────── */
 .symptoms{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
 .sym{background:var(--card);border:1px solid var(--line);padding:20px 22px;font-size:15px;line-height:1.65}
 .sym span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
@@ -93,7 +93,7 @@ a{color:inherit}
 .vein span{writing-mode:vertical-rl;font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:.4em}
 .strata-cap{margin-top:14px;font-size:13px;color:var(--tin);font-family:var(--mono)}
 
-/* ── Semakan Sendiri ─────────────────── */
+/* ── Self-check ─────────────────── */
 .checker{background:var(--card);border:1px solid var(--line);padding:30px 30px 26px}
 .checker h3{font-family:var(--serif);font-weight:700;font-size:21px;margin-bottom:6px}
 .checker .hint{font-size:14px;color:var(--ink-soft);margin-bottom:22px}
@@ -164,7 +164,7 @@ tr:last-child td{border-bottom:none}
 .box li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:1px;background:var(--tin)}
 .box.ore li::before{background:var(--ore)}
 
-/* ── Cara Kerjasama ─────────────────── */
+/* ── Engagement ─────────────────── */
 .ways{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:var(--card)}
 @media(max-width:820px){.ways{grid-template-columns:1fr}}
 .way{padding:28px 30px;border-right:1px solid var(--line)}
@@ -226,8 +226,8 @@ footer{padding:30px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--
   .pair{grid-template-columns:1fr}
   .p-q,.p-a{padding:16px 20px}
   .p-a{border-left:none;border-top:1px solid var(--line)}
-  .p-q::before{content:"Masalah anda";display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--tin);margin-bottom:6px}
-  .p-a::before{content:"Tindakan kami";display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--vein);margin-bottom:6px}
+  .p-q::before{content:"Your problem";display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--tin);margin-bottom:6px}
+  .p-a::before{content:"What we do";display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--vein);margin-bottom:6px}
   .fact{border-right:none;border-bottom:1px solid var(--line);min-width:100%}
   .cta-block{padding:40px 24px}
   table{font-size:13px}th,td{padding:12px}
@@ -267,12 +267,12 @@ footer{padding:30px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--
   <div class="wrap">
     <div class="brand">Uranisys Digital Solution Sdn. Bhd.</div>
     <nav class="topnav">
-      <a href="#check">Semakan Sendiri</a>
-      <a href="#services">Perkhidmatan</a>
-      <a href="#engage">Cara Kerjasama</a>
-      <a href="#contact" class="cta">Tempah Diagnostik</a>
+      <a href="#check">Self-check</a>
+      <a href="#services">Services</a>
+      <a href="#engage">Engagement</a>
+      <a href="#contact" class="cta">Book a diagnostic</a>
     </nav>
-      <div class="langsw"><a href="./" class="on">BM</a><a href="en/">EN</a><a href="zh/">中文</a></div>
+      <div class="langsw"><a href="bm/">BM</a><a href="./" class="on">EN</a><a href="zh/">中文</a></div>
   </div>
 </div>
 
@@ -280,112 +280,112 @@ footer{padding:30px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--
 
 <!-- hero -->
 <header class="hero">
-  <h1>Data perlu boleh digunakan dahulu,<br>barulah ia boleh <em>berjalan sendiri</em>.</h1>
+  <h1>Data has to be usable first,<br>before it can <em>run itself</em>.</h1>
   <p>
-    Anda bukan kekurangan sistem. Apa yang kurang ialah satu lapisan yang membersihkan data, menyambungkan sistem, dan membolehkan kerja rutin selesai dengan sendirinya.
-    Lapisan itulah yang kami kendalikan.
+    You are not short of systems. What you are missing is the layer that cleans the data, connects the systems, and lets routine work complete itself.
+    That layer is what we do.
   </p>
   <div class="hero-actions">
-    <a href="#contact" class="btn btn-solid">Tempah satu sesi diagnostik</a>
-    <a href="#check" class="btn btn-ghost">Kenal pasti dahulu lapisan syarikat anda</a>
+    <a href="#contact" class="btn btn-solid">Book a diagnostic</a>
+    <a href="#check" class="btn btn-ghost">First, find out which layer you are on</a>
   </div>
-  <p class="hero-note" style="margin-top:20px">Langkah pertama ialah memahami keadaan semasa. Selepas diagnostik selesai, anda menerima senarai masalah berserta cadangan susunan keutamaan.</p>
+  <p class="hero-note" style="margin-top:20px">The first step is understanding where you stand. When the diagnostic is done, you receive a list of issues and a recommended order of priority.</p>
 </header>
 
-<!-- gejala -->
+<!-- symptoms -->
 <section class="sec">
   <div class="sec-head">
-    <div class="kicker">Mungkin ini yang anda hadapi</div>
-    <h2>Kedengaran biasa?</h2>
+    <div class="kicker">What you may be living with</div>
+    <h2>Does any of this sound familiar?</h2>
   </div>
   <div class="symptoms">
-    <div class="sym"><span>Setiap bulan</span>Beberapa hari terakhir setiap bulan, seluruh syarikat bekerja lebih masa menyusun Excel, membuat penyesuaian akaun dan mengumpul laporan.</div>
-    <div class="sym"><span>Antara sistem</span>Tiga sistem dibeli, tetapi tidak bercakap antara satu sama lain, jadi data disalin dan ditampal secara manual.</div>
-    <div class="sym"><span>Proses bertulis</span>Kelulusan, permohonan belian dan cuti masih di atas kertas, dan tiada siapa tahu dokumen itu tersekat di meja siapa.</div>
-    <div class="sym"><span>Kualiti data</span>Pelanggan yang sama dieja beberapa cara dalam fail berbeza, dan angkanya tidak pernah sepadan.</div>
-    <div class="sym"><span>Kelajuan keputusan</span>Anda terpaksa menunggu penutupan akaun sebelum tahu sama ada bulan lepas menguntungkan.</div>
-    <div class="sym"><span>Risiko bergantung pada individu</span>Kerja kritikal bergantung pada seorang pekerja berpengalaman, dan semuanya terhenti apabila beliau bercuti.</div>
+    <div class="sym"><span>Every month</span>For the last few days of the month, the whole company works late on Excel, reconciliation and pulling reports together.</div>
+    <div class="sym"><span>Between systems</span>You bought three systems. They do not talk to each other, so people copy and paste in between.</div>
+    <div class="sym"><span>Paper processes</span>Approvals, purchase requests and leave are still on paper, and nobody can tell whose desk a document is sitting on.</div>
+    <div class="sym"><span>Data quality</span>The same customer is spelled several ways across different files, and the numbers never reconcile.</div>
+    <div class="sym"><span>Decision speed</span>You wait for the accounts to close before you know whether last month made money.</div>
+    <div class="sym"><span>Key-person risk</span>A critical task depends on one experienced employee, and everything stops when they take leave.</div>
   </div>
   <div class="sym-close">
-    Keadaan ini jarang berpunca daripada pekerja yang kurang berusaha.<br>Puncanya ialah data tiada asas yang sama, lalu setiap tugas terpaksa dipikul oleh tenaga manusia.
+    These situations rarely come from staff not trying hard enough.<br>They come from data having no common basis, which leaves people to carry every task by hand.
   </div>
 </section>
 
-<!-- empat lapisan -->
+<!-- four layers -->
 <section class="sec">
   <div class="sec-head">
-    <div class="kicker">Bagaimana kami membaca masalah anda</div>
-    <h2>Empat lapisan, dari bawah ke atas. Tiada lompatan.</h2>
-    <p>Kebanyakan projek gagal kerana lapisan bawah dilangkau untuk terus ke lapisan atas. Papan pemuka yang dibina atas data yang belum dibersihkan lebih berbahaya daripada tiada papan pemuka langsung, kerana anda akan membuat keputusan berdasarkan angka yang salah.</p>
+    <div class="kicker">How we read your problem</div>
+    <h2>Four layers, bottom up. No skipping.</h2>
+    <p>Most implementations fail because a lower layer was skipped to get at a higher one. A dashboard built on uncleaned data is more dangerous than no dashboard at all, because you will decide on the strength of wrong numbers.</p>
   </div>
 
   <div class="strata">
     <div class="bands">
-      <a class="band b1" href="#L1"><span class="band-n">L1</span><span class="band-t">Pembersihan Data</span><span class="band-d">Data yang bersih</span><span class="band-r">Asas</span></a>
-      <a class="band b2" href="#L2"><span class="band-n">L2</span><span class="band-t">Integrasi API</span><span class="band-d">Data yang mengalir</span><span class="band-r">Paip</span></a>
-      <a class="band b3" href="#L3"><span class="band-n">L3</span><span class="band-t">Pendigitalan Proses</span><span class="band-d">Kerja yang automatik</span><span class="band-r">Enjin</span></a>
-      <a class="band b4" href="#L4"><span class="band-n">L4</span><span class="band-t">Papan Pemuka & Wawasan</span><span class="band-d">Keputusan yang berasas</span><span class="band-r">Panel</span></a>
+      <a class="band b1" href="#L1"><span class="band-n">L1</span><span class="band-t">Data Cleanup</span><span class="band-d">The data is clean</span><span class="band-r">Foundation</span></a>
+      <a class="band b2" href="#L2"><span class="band-n">L2</span><span class="band-t">API Integration</span><span class="band-d">The data flows</span><span class="band-r">Pipes</span></a>
+      <a class="band b3" href="#L3"><span class="band-n">L3</span><span class="band-t">Process Digitalisation</span><span class="band-d">The work is automatic</span><span class="band-r">Engine</span></a>
+      <a class="band b4" href="#L4"><span class="band-n">L4</span><span class="band-t">Dashboards & Insight</span><span class="band-d">Decisions have a basis</span><span class="band-r">Instruments</span></a>
     </div>
   </div>
-  <p class="strata-cap">Mana-mana lapisan boleh dimulakan secara berasingan, bergantung pada keadaan sebenar anda</p>
+  <p class="strata-cap">Any layer can be taken on its own. Where you start depends on where you actually are.</p>
 </section>
 
-<!-- Semakan Sendiri -->
+<!-- Self-check -->
 <section class="sec" id="check">
   <div class="sec-head">
-    <div class="kicker">Semakan sendiri 30 saat</div>
-    <h2>Syarikat anda berada di lapisan mana?</h2>
-    <p>Tandakan semua yang menepati keadaan anda. Lapisan permulaan yang disyorkan akan dipaparkan di bawah.</p>
+    <div class="kicker">30-second self-check</div>
+    <h2>Which layer is your company on?</h2>
+    <p>Tick everything that matches your situation. A recommended starting layer appears below.</p>
   </div>
 
   <div class="checker">
-    <h3>Keadaan semasa syarikat anda</h3>
-    <p class="hint">Tiada jawapan yang betul. Lebih banyak tanda bukan bermakna keadaan lebih teruk, cuma lebih banyak masa yang boleh dijimatkan.</p>
+    <h3>Where your company stands</h3>
+    <p class="hint">There is no right answer. Ticking more boxes does not mean things are worse, only that there is more time to be saved.</p>
     <div class="qgrid" id="qgrid">
-      <label class="q"><input type="checkbox" data-layer="1">Pelanggan atau nombor bahagian yang sama ditulis lebih daripada satu cara dalam fail berbeza</label>
-      <label class="q"><input type="checkbox" data-layer="1">Setiap jabatan menyimpan fail Excel sendiri dan angkanya tidak sepadan</label>
-      <label class="q"><input type="checkbox" data-layer="1">Apabila analisis diperlukan, sebahagian besar masa habis hanya untuk mengemas data</label>
-      <label class="q"><input type="checkbox" data-layer="2">Rekod yang sama dimasukkan ke dalam dua sistem atau lebih</label>
-      <label class="q"><input type="checkbox" data-layer="2">Pesanan e-dagang atau saluran dimuat turun secara manual sebelum diimport ke sistem dalaman</label>
-      <label class="q"><input type="checkbox" data-layer="2">Anda mahu alat baharu tetapi tidak pasti ia boleh disambung ke sistem sedia ada</label>
-      <label class="q"><input type="checkbox" data-layer="3">Kelulusan, permohonan belian dan cuti masih diuruskan atas kertas atau aplikasi pesanan</label>
-      <label class="q"><input type="checkbox" data-layer="3">Pada hari tertentu setiap bulan, ramai orang mengulang kerja penyesuaian dan pengemasan yang sama</label>
-      <label class="q"><input type="checkbox" data-layer="3">Ada tugas kritikal yang hanya seorang tahu melakukannya</label>
-      <label class="q"><input type="checkbox" data-layer="4">Anda menunggu penutupan bulanan untuk tahu prestasi bulan lepas</label>
-      <label class="q"><input type="checkbox" data-layer="4">Anda tidak dapat menyatakan dengan jelas pelanggan, produk atau projek mana yang benar-benar menguntungkan</label>
-      <label class="q"><input type="checkbox" data-layer="4">Banyak laporan dihasilkan, tetapi jarang dibuka oleh pihak pengurusan</label>
+      <label class="q"><input type="checkbox" data-layer="1">The same customer or part number is written more than one way across files</label>
+      <label class="q"><input type="checkbox" data-layer="1">Each department keeps its own Excel file and the numbers do not reconcile</label>
+      <label class="q"><input type="checkbox" data-layer="1">When you need analysis, most of the time goes into tidying the data</label>
+      <label class="q"><input type="checkbox" data-layer="2">The same record is keyed into two or more systems</label>
+      <label class="q"><input type="checkbox" data-layer="2">Marketplace or channel orders are downloaded by hand and imported to internal systems</label>
+      <label class="q"><input type="checkbox" data-layer="2">You want a new tool but are unsure whether it can connect to what you have</label>
+      <label class="q"><input type="checkbox" data-layer="3">Approvals, purchase requests and leave still run on paper or chat apps</label>
+      <label class="q"><input type="checkbox" data-layer="3">Certain days each month, several people do the same reconciliation and tidying</label>
+      <label class="q"><input type="checkbox" data-layer="3">Some critical tasks only one person knows how to do</label>
+      <label class="q"><input type="checkbox" data-layer="4">You wait for month-end close to learn how last month went</label>
+      <label class="q"><input type="checkbox" data-layer="4">You cannot say clearly which customer, product or project actually makes money</label>
+      <label class="q"><input type="checkbox" data-layer="4">Plenty of reports get produced, but managers rarely open them</label>
     </div>
     <div class="result" id="result">
-      Tandakan kotak dan cadangan titik permulaan akan muncul di sini.
+      Tick the boxes and your suggested starting point appears here.
     </div>
   </div>
 </section>
 
-<!-- Perkhidmatan -->
+<!-- Services -->
 <section class="sec" id="services">
   <div class="sec-head">
-    <div class="kicker">Perkhidmatan</div>
-    <h2>Setiap masalah di sini ada langkah yang sepadan</h2>
-    <p>Berikut ialah keadaan paling lazim bagi setiap lapisan, dan apa yang kami lakukan mengenainya. Skop dan pendekatan disesuaikan dengan keadaan anda.</p>
+    <div class="kicker">Services</div>
+    <h2>Every problem here has a matching move</h2>
+    <p>Below are the most common situations at each layer and what we actually do about them. Scope and approach are adjusted to your circumstances.</p>
   </div>
 
   <!-- L1 -->
   <article class="line" id="L1">
     <div class="line-top">
       <span class="chip c1">L1</span>
-      <div><h3>Pembersihan Data</h3><div class="role">Membina asas — prasyarat bagi semua kerja selepasnya</div></div>
+      <div><h3>Data Cleanup</h3><div class="role">Laying the foundation — the precondition for everything after it</div></div>
     </div>
     <div class="pairs">
-      <div class="pair-head"><span>Masalah anda</span><span>Tindakan kami</span></div>
-      <div class="pair"><div class="p-q">Pelanggan yang sama, nombor bahagian yang sama, ditulis pelbagai cara dalam fail berbeza</div><div class="p-a"><b>Penyeragaman data induk.</b>Pelanggan, pembekal, produk dan nombor bahagian dinyahduplikasi dan dinamakan secara seragam, dengan pengecam unik supaya setiap rekod merujuk kepada satu entiti sahaja.</div></div>
-      <div class="pair"><div class="p-q">Setiap jabatan menyimpan Excel sendiri dan angkanya tidak pernah sepadan</div><div class="p-a"><b>Inventori data, kemudian tetapkan satu sumber rasmi.</b>Kami menentukan di mana data berada, siapa menyelenggaranya dan seberapa kerap ia dikemas kini, lalu menetapkan satu sumber berautoriti berserta tanggungjawab penyelenggaraan.</div></div>
-      <div class="pair"><div class="p-q">Anda mahu membuat analisis, tetapi lapan puluh peratus masa habis menyediakan data</div><div class="p-a"><b>Peraturan kualiti dan pembersihan automatik.</b>Kami menetapkan apa yang dikira data sah dan cara mengisi kekosongan, lalu menjadikan kerja mengemas berulang itu satu proses yang boleh dijalankan semula.</div></div>
-      <div class="pair"><div class="p-q">Sistem hendak diganti atau dinaik taraf, tetapi data lama sukar dipindahkan</div><div class="p-a"><b>Penukaran dan pemindahan data sejarah.</b>Pemetaan medan, penukaran format, dan pengesahan sebelum dan selepas untuk memastikan angka yang dipindahkan sama dengan yang asal.</div></div>
-      <div class="pair"><div class="p-q">Ia pernah dikemas, dan tiga bulan kemudian bersepah semula</div><div class="p-a"><b>SOP penyelenggaraan data induk.</b>Peraturan penambahan dan pindaan, siapa berhak mengubah, dan kekerapan semakan, supaya keadaan bersih itu kekal.</div></div>
+      <div class="pair-head"><span>Your problem</span><span>What we do</span></div>
+      <div class="pair"><div class="p-q">The same customer, the same part number, written several ways across files</div><div class="p-a"><b>Master data standardisation.</b>Customers, suppliers, products and part numbers are de-duplicated and named consistently, with a unique identifier so each record points to exactly one thing.</div></div>
+      <div class="pair"><div class="p-q">Every department keeps its own Excel and the numbers never reconcile</div><div class="p-a"><b>Inventory the data, then name a single source of truth.</b>We establish where data lives, who maintains it and how often it is updated, then designate one authoritative source and assign responsibility for it.</div></div>
+      <div class="pair"><div class="p-q">You want analysis, but eighty percent of the time goes into preparing the data</div><div class="p-a"><b>Quality rules and automated cleansing.</b>We define what counts as valid data and how gaps are filled, then turn the repetitive tidying into a process that can be re-run.</div></div>
+      <div class="pair"><div class="p-q">A system is being replaced or upgraded and the old data will not migrate cleanly</div><div class="p-a"><b>Historical data conversion and migration.</b>Field mapping, format conversion, and before-and-after reconciliation to confirm the migrated figures match the originals.</div></div>
+      <div class="pair"><div class="p-q">You cleaned it up once, and three months later it was a mess again</div><div class="p-a"><b>Master data maintenance SOP.</b>Rules for additions and changes, who is allowed to edit, and how often it is reviewed, so the clean state holds.</div></div>
     </div>
     <div class="facts">
-      <div class="fact"><div class="lbl">Penyerahan</div><div class="val plain">Inventori data, fail induk seragam, senarai kekosongan, garis panduan penyelenggaraan</div></div>
-      <div class="fact"><div class="lbl">Tempoh</div><div class="val">1–4 minggu</div></div>
+      <div class="fact"><div class="lbl">Deliverables</div><div class="val plain">Data inventory, standardised master files, gap list, maintenance rules</div></div>
+      <div class="fact"><div class="lbl">Duration</div><div class="val">1–4 weeks</div></div>
     </div>
   </article>
 
@@ -393,19 +393,19 @@ footer{padding:30px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--
   <article class="line" id="L2">
     <div class="line-top">
       <span class="chip c2">L2</span>
-      <div><h3>Integrasi API</h3><div class="role">Menyambung paip — tidak perlu ganti sistem sedia ada, cukup buat ia mula bercakap</div></div>
+      <div><h3>API Integration</h3><div class="role">Connecting the pipes — no need to replace your systems, only to get them talking</div></div>
     </div>
     <div class="pairs">
-      <div class="pair-head"><span>Masalah anda</span><span>Tindakan kami</span></div>
-      <div class="pair"><div class="p-q">Tiga sistem yang tidak bercakap antara satu sama lain, disambung dengan salin-tampal manual</div><div class="p-a"><b>Integrasi antara sistem.</b>Kami bermula dengan inventori dan penilaian kebolehlaksanaan, kemudian membina laluan data antara ERP, POS, platform e-dagang, perisian perakaunan dan CRM.</div></div>
-      <div class="pair"><div class="p-q">Pesanan platform e-dagang dimuat turun secara manual sebelum diimport ke ERP</div><div class="p-a"><b>Pengambilan pesanan automatik dan penukaran format.</b>Pesanan diambil mengikut jadual, dipetakan dan ditukar formatnya, lalu terus ditulis ke ERP tanpa sentuhan manusia.</div></div>
-      <div class="pair"><div class="p-q">Anda mahu menggunakan satu perkhidmatan awan tetapi tidak tahu sama ada ia boleh disambung</div><div class="p-a"><b>Penilaian kebolehlaksanaan integrasi.</b>Kami mengesahkan sama ada pihak sana mempunyai API dan sama ada data benar-benar boleh dikeluarkan, menilai risiko dan tempoh sebelum anda melabur.</div></div>
-      <div class="pair"><div class="p-q">Sistem pihak sana lama dan langsung tiada API</div><div class="p-a"><b>Saluran alternatif.</b>Pertukaran fail automatik, bacaan terus pangkalan data atau automasi web, supaya anda tidak perlu mengganti keseluruhan sistem hanya untuk menyambungkannya.</div></div>
-      <div class="pair"><div class="p-q">Pelanggan atau pembekal meminta pertukaran data dan anda tidak tahu di mana hendak bermula</div><div class="p-a"><b>Tetapkan spesifikasi dan bina salurannya.</b>Format, kekerapan dan kaedah penghantaran dipersetujui, berserta pengendalian ralat, cubaan semula automatik dan notifikasi anomali.</div></div>
+      <div class="pair-head"><span>Your problem</span><span>What we do</span></div>
+      <div class="pair"><div class="p-q">Three systems that do not talk to each other, with manual copy-paste in between</div><div class="p-a"><b>System-to-system integration.</b>We start with an inventory and a feasibility assessment, then build the data paths between ERP, POS, e-commerce platforms, accounting software and CRM.</div></div>
+      <div class="pair"><div class="p-q">Marketplace orders are downloaded by hand and imported into ERP</div><div class="p-a"><b>Automated order retrieval and format conversion.</b>Orders are fetched on a schedule, mapped and converted, then written straight into ERP with no one touching them.</div></div>
+      <div class="pair"><div class="p-q">You want to use a cloud service but do not know whether it will connect</div><div class="p-a"><b>Integration feasibility assessment.</b>We confirm whether the other side has an API and whether the data can actually come out, assessing risk and timeline before you commit.</div></div>
+      <div class="pair"><div class="p-q">The other system is old and has no API at all</div><div class="p-a"><b>Alternative channels.</b>Automated file exchange, direct database reads or web automation, so you do not replace an entire system just to connect it.</div></div>
+      <div class="pair"><div class="p-q">A customer or supplier wants data exchange and you do not know where to begin</div><div class="p-a"><b>Define the specification and build the channel.</b>Format, frequency and transport are agreed, with error handling, automatic retries and exception alerts.</div></div>
     </div>
     <div class="facts">
-      <div class="fact"><div class="lbl">Penyerahan</div><div class="val plain">Rajah seni bina integrasi, saluran sambungan, mekanisme pengendalian anomali, dokumentasi teknikal</div></div>
-      <div class="fact"><div class="lbl">Tempoh</div><div class="val">2–5 minggu</div></div>
+      <div class="fact"><div class="lbl">Deliverables</div><div class="val plain">Integration architecture diagram, working connections, exception handling, technical documentation</div></div>
+      <div class="fact"><div class="lbl">Duration</div><div class="val">2–5 weeks</div></div>
     </div>
   </article>
 
@@ -413,23 +413,23 @@ footer{padding:30px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--
   <article class="line" id="L3">
     <div class="line-top">
       <span class="chip c3">L3</span>
-      <div><h3>Pendigitalan & Automasi Proses</h3><div class="role">Memasang enjin — perbaiki dahulu, kemudian automasikan. Kami tidak memindahkan proses yang buruk ke sistem tanpa diubah</div></div>
+      <div><h3>Process Digitalisation & Automation</h3><div class="role">Fitting the engine — improve first, then automate. We do not move a bad process onto a system untouched</div></div>
     </div>
     <div class="pairs">
-      <div class="pair-head"><span>Masalah anda</span><span>Tindakan kami</span></div>
-      <div class="pair"><div class="p-q">Kelulusan, permohonan belian dan cuti di atas kertas, dan tiada siapa tahu dokumen tersekat di mana</div><div class="p-a"><b>Proses kertas dibawa ke dalam talian.</b>Borang beralih ke dalam talian dan kelulusan menjadi aliran sistem, dengan rekod siapa mengendalikan setiap peringkat dan bila, serta peringatan automatik apabila melebihi tempoh.</div></div>
-      <div class="pair"><div class="p-q">Maklumat yang sama disalin ke pelbagai borang dan sistem, dan kesilapan salinan hanya ditemui kemudian</div><div class="p-a"><b>Isi sekali, guna sepanjang proses.</b>Borang itu sendiri menjadi sumber data dan terus masuk ke sistem, dengan medan wajib dan semakan format yang menghalang ralat sebaik ia ditaip.</div></div>
-      <div class="pair"><div class="p-q">Dokumen merentas jabatan dan berhari-hari hilang semata-mata menunggu tandatangan</div><div class="p-a"><b>Pendekkan laluan proses.</b>Tahap kelulusan dan laluan bersyarat direka semula supaya kes kecil atau rutin diluluskan automatik, dan hanya kes luar biasa memerlukan campur tangan manusia.</div></div>
-      <div class="pair"><div class="p-q">Menjejaki dokumen enam bulan lalu bermakna menyelongkar fail kertas</div><div class="p-a"><b>Rekod proses yang boleh dicari dan diaudit.</b>Semua dokumen dan sejarah kelulusan disimpan bersama dan boleh dicari, jadi pengauditan, semakan akaun dan penjejakan aduan boleh dikeluarkan serta-merta.</div></div>
-      <div class="pair"><div class="p-q">Pada hari yang sama setiap bulan, seluruh syarikat mengulang kerja mengemas dan menyesuaikan akaun</div><div class="p-a"><b>Automasikan kerja paling kerap terlebih dahulu.</b>Penyesuaian akaun bulanan, penjanaan laporan, penyatuan data dan muat naik pukal diserahkan kepada penjadualan dan skrip yang menyelesaikannya sendiri.</div></div>
-      <div class="pair"><div class="p-q">Satu proses melalui lima orang dan tujuh borang, dan tiada siapa lagi boleh menjelaskan sebabnya</div><div class="p-a"><b>Pemetaan dan reka bentuk semula proses.</b>Kami memetakan apa yang sebenarnya berlaku, mengesan kerja berulang, masa menunggu dan langkah yang tidak berkesan, membuang yang tidak perlu, barulah menentukan bahagian mana yang berbaloi diautomasikan.</div></div>
-      <div class="pair"><div class="p-q">Kerja lebih masa habis mengemas data, bukan menjalankan perniagaan</div><div class="p-a"><b>Serahkan kerja mengemas kepada mesin.</b>RPA, skrip dan alat aliran kerja awan mengambil alih kerja rutin, meninggalkan manusia untuk menilai kes luar biasa dan memberi pengesahan akhir.</div></div>
-      <div class="pair"><div class="p-q">Tugas kritikal bergantung pada seorang pekerja kanan, dan terhenti apabila beliau bercuti</div><div class="p-a"><b>Tukar pengalaman peribadi menjadi proses bertulis.</b>Peraturan kerja dijadikan dokumentasi dan skrip automasi, berserta manual dan latihan, supaya sesiapa sahaja boleh mengambil alih.</div></div>
-      <div class="pair"><div class="p-q">Automasi pernah dilaksanakan, rosak apabila sistem berubah, dan tiada siapa mampu membaikinya</div><div class="p-a"><b>Pembinaan yang boleh diselenggara, dengan sokongan berterusan.</b>Ruang untuk penyesuaian direka dari awal, dengan pelarasan selepas naik taraf dan sokongan teknikal jarak jauh.</div></div>
+      <div class="pair-head"><span>Your problem</span><span>What we do</span></div>
+      <div class="pair"><div class="p-q">Approvals, purchase requests and leave are on paper, and no one can tell where a document is stuck</div><div class="p-a"><b>Paper processes taken online.</b>Forms move online and approvals become a system flow, with a record of who handled each step and when, and automatic reminders when something overruns.</div></div>
+      <div class="pair"><div class="p-q">The same information is copied into several forms and systems, and transcription errors surface only afterwards</div><div class="p-a"><b>Enter it once, use it throughout.</b>The form itself is the data source and goes straight into the system, with required fields and format checks stopping errors as they are typed.</div></div>
+      <div class="pair"><div class="p-q">A document crosses departments and days are lost simply waiting for signatures</div><div class="p-a"><b>Shorten the path.</b>Approval levels and conditional routing are redesigned so small or routine cases clear automatically and only exceptions need a person.</div></div>
+      <div class="pair"><div class="p-q">Tracing a document from six months ago means digging through paper files</div><div class="p-a"><b>Searchable, auditable process records.</b>Documents and approval histories are kept together and searchable, so audits, account checks and complaint tracing can be pulled up at once.</div></div>
+      <div class="pair"><div class="p-q">The same few days each month, the whole company repeats the same tidying and reconciliation</div><div class="p-a"><b>Automate the highest-frequency work first.</b>Month-end reconciliation, report generation, data consolidation and batch uploads are handed to schedules and scripts that finish on their own.</div></div>
+      <div class="pair"><div class="p-q">A process passes five people and seven forms, and nobody can explain why any more</div><div class="p-a"><b>Process mapping and redesign.</b>We map what actually happens, find the rework, waiting and dead steps, remove what is unnecessary, and only then decide which parts are worth automating.</div></div>
+      <div class="pair"><div class="p-q">The overtime goes into tidying data rather than doing business</div><div class="p-a"><b>Give the tidying to the machine.</b>RPA, scripts and cloud workflow tools take over the routine, leaving people to judge exceptions and give final confirmation.</div></div>
+      <div class="pair"><div class="p-q">A critical task rests on one senior employee, and stops when they are on leave</div><div class="p-a"><b>Turn personal know-how into a written process.</b>The rules become documentation and automation, with a manual and training, so anyone can pick the work up.</div></div>
+      <div class="pair"><div class="p-q">Automation was implemented before, broke when the system changed, and no one could fix it</div><div class="p-a"><b>Maintainable build, with ongoing support.</b>Room to adjust is designed in from the start, with post-upgrade tuning and remote technical support.</div></div>
     </div>
     <div class="facts">
-      <div class="fact"><div class="lbl">Penyerahan</div><div class="val plain">Peta proses semasa dan cadangan penambahbaikan, borang dalam talian dan aliran kelulusan, proses automasi, manual pengguna, latihan</div></div>
-      <div class="fact"><div class="lbl">Tempoh</div><div class="val">2–8 minggu</div></div>
+      <div class="fact"><div class="lbl">Deliverables</div><div class="val plain">Current-state process maps and improvement proposals, online forms and approval flows, automations, operating manuals, training</div></div>
+      <div class="fact"><div class="lbl">Duration</div><div class="val">2–8 weeks</div></div>
     </div>
   </article>
 
@@ -437,124 +437,124 @@ footer{padding:30px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--
   <article class="line" id="L4">
     <div class="line-top">
       <span class="chip c4">L4</span>
-      <div><h3>Reka Bentuk Papan Pemuka & Wawasan Perniagaan</h3><div class="role">Memasang panel — tanya soalan yang betul sebelum melukis carta</div></div>
+      <div><h3>Dashboard Design & Business Insight</h3><div class="role">Fitting the instruments — ask the right question before drawing the chart</div></div>
     </div>
     <div class="pairs">
-      <div class="pair-head"><span>Masalah anda</span><span>Tindakan kami</span></div>
-      <div class="pair"><div class="p-q">Laporan banyak, tetapi jawapan yang anda perlukan masih perlu dicari secara mendadak</div><div class="p-a"><b>Mulakan dengan temu bual keputusan.</b>Kami menentukan tiga soalan yang benar-benar perlu dijawab setiap hari dan setiap bulan, lalu membina hanya paparan yang menjawabnya.</div></div>
-      <div class="pair"><div class="p-q">Anda hanya tahu keadaan bulan lepas selepas akaun ditutup, terlalu lewat untuk bertindak</div><div class="p-a"><b>Kemas kini automatik.</b>Data disegerakkan setiap hari dan petunjuk utama boleh dilihat bila-bila masa, jadi anda tidak perlu menunggu penutupan akaun untuk tahu apa yang berlaku.</div></div>
-      <div class="pair"><div class="p-q">Anda tidak tahu pelanggan, produk atau jurujual mana yang benar-benar menguntungkan</div><div class="p-a"><b>Petunjuk diterbitkan daripada logik perniagaan.</b>Analisis penumpuan pelanggan, margin produk, penuaan akaun belum terima, pusing ganti inventori serta kapasiti berbanding masa penghantaran.</div></div>
-      <div class="pair"><div class="p-q">Alat BI sudah ada tetapi hasilnya jarang dibuka</div><div class="p-a"><b>Definisi bertulis, berserta tafsiran berkala.</b>Bukan sekadar carta, tetapi penjelasan tentang apa yang berlaku, kemungkinan puncanya, dan tindakan yang kami cadangkan seterusnya.</div></div>
-      <div class="pair"><div class="p-q">Setiap orang membawa angka berbeza, dan mesyuarat bermula dengan pertikaian definisi</div><div class="p-a"><b>Satu definisi yang dipersetujui bagi setiap petunjuk.</b>Kaedah pengiraan, sumber data dan definisi tempoh didokumenkan supaya seluruh syarikat mengira dengan cara yang sama.</div></div>
+      <div class="pair-head"><span>Your problem</span><span>What we do</span></div>
+      <div class="pair"><div class="p-q">There are plenty of reports, yet the answer you need still has to be hunted down</div><div class="p-a"><b>Start with a decision interview.</b>We establish the three questions you genuinely need answered daily and monthly, and build only the screens that answer them.</div></div>
+      <div class="pair"><div class="p-q">You learn how last month went only after the accounts close, too late to react</div><div class="p-a"><b>Automatic refresh.</b>Data syncs daily and key figures are available at any time, so you are not waiting on the close to find out what happened.</div></div>
+      <div class="pair"><div class="p-q">You do not know which customer, product or salesperson actually makes money</div><div class="p-a"><b>Measures derived from the business logic.</b>Customer concentration, product margin, receivables ageing, inventory turnover and capacity-versus-lead-time analyses.</div></div>
+      <div class="pair"><div class="p-q">A BI tool is in place but hardly anyone opens the result</div><div class="p-a"><b>Documented definitions, plus regular interpretation.</b>Not just charts, but an account of what happened, the likely cause, and what we suggest doing next.</div></div>
+      <div class="pair"><div class="p-q">Everyone arrives with a different number and meetings start by arguing over definitions</div><div class="p-a"><b>One agreed definition per measure.</b>Calculation method, data source and period definitions are written down so the whole company computes the same way.</div></div>
     </div>
     <div class="facts">
-      <div class="fact"><div class="lbl">Penyerahan</div><div class="val plain">Dokumen definisi petunjuk, papan pemuka, mekanisme kemas kini automatik, sesi tafsiran berkala</div></div>
-      <div class="fact"><div class="lbl">Tempoh</div><div class="val">3–6 minggu</div></div>
+      <div class="fact"><div class="lbl">Deliverables</div><div class="val plain">Measure definitions, dashboards, automatic refresh, regular review sessions</div></div>
+      <div class="fact"><div class="lbl">Duration</div><div class="val">3–6 weeks</div></div>
     </div>
   </article>
 </section>
 
-<!-- hasil -->
+<!-- results -->
 <section class="sec">
   <div class="sec-head">
-    <div class="kicker">Hasil sebenar</div>
-    <h2>Beginilah bezanya selepas siap</h2>
-    <p>Berikut ialah hasil mewakili projek lepas. Nama pelanggan tidak didedahkan mengikut perjanjian kerahsiaan.</p>
+    <div class="kicker">Results</div>
+    <h2>What changes once it is done</h2>
+    <p>Representative results from past projects. Client names are withheld under confidentiality agreements.</p>
   </div>
   <div class="cases">
     <div class="case">
-      <div class="tag">L1 ／ Pembersihan Data</div>
+      <div class="tag">L1 ／ Data Cleanup</div>
       <div class="big">-72<small>%</small></div>
-      <h5>Sebuah pusat peperiksaan</h5>
-      <p>Masa menyediakan data berkurang lebih tujuh puluh peratus, dengan kerja semakan dan penyatuan manual yang berat digantikan proses seragam.</p>
+      <h5>An examination centre</h5>
+      <p>Time spent preparing data fell by more than seventy percent, with heavy manual checking and consolidation replaced by a standardised process.</p>
     </div>
     <div class="case">
-      <div class="tag">L3 ／ Pendigitalan Proses</div>
+      <div class="tag">L3 ／ Process Digitalisation</div>
       <div class="big">-70<small>%</small></div>
-      <h5>Sebuah pusat jualan kereta</h5>
-      <p>Proses yang bergantung pada kertas dan penghantaran manual beralih ke dalam talian, memendekkan jumlah masa kerja sebanyak tujuh puluh peratus.</p>
+      <h5>A car dealership</h5>
+      <p>A process that relied on paper and hand delivery moved online, cutting total processing time by seventy percent.</p>
     </div>
     <div class="case">
-      <div class="tag">L4 ／ Papan Pemuka</div>
-      <div class="big">Setengah hari<small> → bawah 30 minit</small></div>
-      <h5>Pusat peperiksaan · Pusat jualan kereta</h5>
-      <p>Laporan operasi yang mengambil setengah hari untuk disusun kini dikemas kini secara automatik, dengan angka tersedia dalam masa tiga puluh minit.</p>
+      <div class="tag">L4 ／ Dashboards</div>
+      <div class="big">Half a day<small> → under 30 min</small></div>
+      <h5>An examination centre · A car dealership</h5>
+      <p>An operations report that took half a day to assemble now refreshes automatically, with the figures available inside thirty minutes.</p>
     </div>
   </div>
 </section>
 
-<!-- Cara Kerjasama -->
+<!-- Engagement -->
 <section class="sec" id="engage">
   <div class="sec-head">
-    <div class="kicker">Cara Kerjasama</div>
-    <h2>Dua cara untuk bekerjasama</h2>
-    <p>Yuran disebut harga mengikut skop sebenar. Berikut ialah cara kerjasama dengan kami boleh distrukturkan.</p>
+    <div class="kicker">Engagement</div>
+    <h2>Two ways to work together</h2>
+    <p>Fees are quoted against actual scope. What follows is how an engagement with us can be structured.</p>
   </div>
   <div class="ways">
     <div class="way">
       <div class="n">Model A</div>
-      <h4>Berasaskan projek</h4>
-      <p>Sesuai untuk kerja yang matlamat dan penyerahannya jelas. Skop, jadual dan kriteria penerimaan dipersetujui dahulu, projek diberi harga secara keseluruhan, dan ditutup setelah diserahkan. Apabila skopnya jelas, cara ini memberi kedua-dua pihak kawalan terbaik ke atas bajet dan tanggungjawab.</p>
+      <h4>Project-based</h4>
+      <p>Suited to work with a clear goal and defined deliverables. Scope, schedule and acceptance criteria are agreed first, the project is priced as a whole, and it closes on delivery. Where the scope is clear, this gives both sides the firmest grip on budget and responsibility.</p>
     </div>
     <div class="way">
       <div class="n">Model B</div>
-      <h4>Sistem kredit jam</h4>
-      <p>Anda membeli jam terlebih dahulu dan menolaknya mengikut kerja yang dilakukan. Sesuai apabila keperluan masih berubah, atau apabila sokongan jangka panjang dan pelarasan berterusan diperlukan, kerana tidak perlu membuka kes dan sebut harga baharu bagi setiap perkara kecil. Apabila anda memerlukan tenaga, anda terus menggunakannya.</p>
+      <h4>Retainer credits</h4>
+      <p>You pre-purchase hours and draw them down as work is done. Suited to requirements that are still moving, or to long-term support and continual adjustment, since there is no need to raise a case and re-quote for every small thing. When you need the hours, you use them.</p>
     </div>
   </div>
 </section>
 
-<!-- Aliran kerjasama -->
+<!-- How we work -->
 <section class="sec">
   <div class="sec-head">
-    <div class="kicker">Aliran kerjasama</div>
-    <h2>Dari pertemuan pertama sehingga beroperasi</h2>
+    <div class="kicker">How we work</div>
+    <h2>From first meeting to going live</h2>
   </div>
   <div class="flow">
     <div class="step">
       <div class="n">01</div>
-      <h5>Perbincangan awal</h5>
-      <p>Kami memahami keadaan semasa anda dan masalah yang paling ingin diselesaikan, serta menentukan sama ada kami sesuai.</p>
-      <div class="t">60 minit · percuma</div>
+      <h5>First conversation</h5>
+      <p>We learn where you stand and what you most want solved, and establish whether we are a fit.</p>
+      <div class="t">60 minutes · free</div>
     </div>
     <div class="step">
       <div class="n">02</div>
-      <h5>Diagnostik</h5>
-      <p>Kami meneliti data dan proses sebenar, lalu menghasilkan senarai masalah, susunan keutamaan dan pendekatan yang boleh dilaksanakan.</p>
-      <div class="t">1–2 minggu</div>
+      <h5>Diagnostic</h5>
+      <p>We look at the actual data and processes, and produce a list of issues, an order of priority and workable options.</p>
+      <div class="t">1–2 weeks</div>
     </div>
     <div class="step">
       <div class="n">03</div>
-      <h5>Pelaksanaan</h5>
-      <p>Kami melaksanakan skop yang dipersetujui, melaporkan kemajuan secara berkala, dan menyerahkannya bersama dokumentasi dan latihan.</p>
-      <div class="t">Bergantung pada projek</div>
+      <h5>Implementation</h5>
+      <p>We execute the agreed scope, report progress regularly, and deliver with documentation and training.</p>
+      <div class="t">Depends on the project</div>
     </div>
     <div class="step">
       <div class="n">04</div>
-      <h5>Sokongan</h5>
-      <p>Pemeriksaan bulanan, pengendalian anomali, pelarasan selepas naik taraf sistem dan sokongan jarak jauh.</p>
-      <div class="t">Boleh ditamatkan bila-bila masa</div>
+      <h5>Support</h5>
+      <p>Monthly health checks, exception handling, post-upgrade adjustment and remote support.</p>
+      <div class="t">Cancel at any time</div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-block" id="contact">
-  <div class="kicker">Langkah seterusnya</div>
-  <h2>Buat diagnostik dahulu,<br>kemudian tentukan lapisan mana hendak dimulakan.</h2>
+  <div class="kicker">Next step</div>
+  <h2>Run a diagnostic first,<br>then decide which layer to start from.</h2>
   <p>
-    Kami tidak akan meminta anda membeli apa-apa pada pertemuan pertama. Lihat dahulu dengan jelas di mana masalahnya dan sama ada ia berbaloi ditangani, barulah anda tentukan sama ada hendak meneruskan.
+    We will not ask you to buy anything at the first meeting. See clearly where the problem is and whether it is worth addressing, then decide whether to go further.
   </p>
   <div class="cta-facts">
-    <div><div class="lbl">Pertemuan pertama</div><div class="v">Percuma · 60 minit</div></div>
-    <div><div class="lbl">Diagnostik</div><div class="v">1–2 minggu</div></div>
-    <div><div class="lbl">Cara pelaksanaan</div><div class="v">Berperingkat · boleh berhenti bila-bila</div></div>
+    <div><div class="lbl">First meeting</div><div class="v">Free · 60 minutes</div></div>
+    <div><div class="lbl">Diagnostic</div><div class="v">1–2 weeks</div></div>
+    <div><div class="lbl">How it runs</div><div class="v">In stages · stop whenever</div></div>
   </div>
 </section>
 
 <footer>
   <span>Uranisys Digital Solution Sdn. Bhd.</span>
-  <span>Kandungan dokumen ini disesuaikan mengikut keperluan sebenar</span>
+  <span>Contents adapted to actual requirements</span>
   <span class="twlink"><a href="tw/">繁體中文</a></span>
 </footer>
 
@@ -562,28 +562,28 @@ footer{padding:30px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--
 
 <script>
 (function(){
-  const names={1:"L1　Pembersihan Data",2:"L2　Integrasi API",3:"L3　Pendigitalan & Automasi Proses",4:"L4　Reka Bentuk Papan Pemuka & Wawasan Perniagaan"};
+  const names={1:"L1　Data Cleanup",2:"L2　API Integration",3:"L3　Process Digitalisation & Automation",4:"L4　Dashboard Design & Business Insight"};
   const advice={
-    1:"Data anda belum mempunyai asas yang sama, dan itulah prasyarat bagi segala yang lain. Bersihkan data induk dahulu, barulah bincang tentang integrasi dan automasi.",
-    2:"Sistem anda berjalan sendiri-sendiri dan data dipindahkan oleh manusia. Sambungkan paipnya dahulu dan biarkan data mengalir sendiri.",
-    3:"Operasi anda masih banyak bergantung pada kerja manual dan kertas. Petakan dan digitalkan proses dahulu; lapisan ini biasanya paling cepat memulangkan masa.",
-    4:"Kebanyakan data anda sudah berada dalam sistem tetapi belum bertukar menjadi asas keputusan yang boleh digunakan. Mulakan dengan reka bentuk petunjuk dan papan pemuka."
+    1:"Your data has no common basis yet, and that is the precondition for everything else. Clean up the master data first, then talk about integration and automation.",
+    2:"Your systems run separately and people carry the data between them. Connect the pipes first and let the data move on its own.",
+    3:"Your operations still lean heavily on manual work and paper. Map and digitalise the processes first; this layer usually returns time the fastest.",
+    4:"Most of your data is already in systems but has not been turned into something you can decide on. Start with measure design and dashboards."
   };
   const grid=document.getElementById("qgrid");
   const out=document.getElementById("result");
   grid.addEventListener("change",function(){
     const boxes=[...grid.querySelectorAll("input:checked")];
-    if(!boxes.length){out.textContent="Tandakan kotak dan cadangan titik permulaan akan muncul di sini.";return;}
+    if(!boxes.length){out.textContent="Tick the boxes and your suggested starting point appears here.";return;}
     const tally={1:0,2:0,3:0,4:0};
     boxes.forEach(b=>tally[b.dataset.layer]++);
     const max=Math.max(...Object.values(tally));
     const top=Object.keys(tally).filter(k=>tally[k]===max).map(Number).sort()[0];
     out.innerHTML=
-      '<div>Anda menandakan <strong>'+boxes.length+'</strong> perkara. Berdasarkan taburannya, titik permulaan yang dicadangkan ialah:</div>'+
+      '<div>You ticked <strong>'+boxes.length+'</strong> item(s). Based on the spread, the suggested starting point is:</div>'+
       '<span class="rlayer">'+names[top]+'</span>'+
       '<div>'+advice[top]+'</div>'+
-      '<div style="margin-top:14px"><a href="#L'+top+'" style="color:var(--vein);font-weight:700">Lihat tindakan pada lapisan ini →</a>'+
-      '　<a href="#contact" style="color:var(--vein);font-weight:700">Tempah diagnostik →</a></div>';
+      '<div style="margin-top:14px"><a href="#L'+top+'" style="color:var(--vein);font-weight:700">See what we do at this layer →</a>'+
+      '　<a href="#contact" style="color:var(--vein);font-weight:700">Book a diagnostic →</a></div>';
   });
 })();
 </script>
